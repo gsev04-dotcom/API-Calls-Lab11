@@ -162,5 +162,13 @@ xhr.send(JSON.stringify({
 });
 
 document.getElementById('deleteBtn').addEventListener('click', function(){
+    const id = document.getElementById('postId').value;
+
+    if (!id) {
+        document.getElementById('display').innerHTML =
+        `<span style=color:orange;>Post ID is missing</span>`
+        return;
+
+    }
     
-})
+});

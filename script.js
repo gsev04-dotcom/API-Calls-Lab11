@@ -7,7 +7,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
 
 
    .then (post => {
-    document.getElementedId("display").innerHTML = `<h3>
+    document.getElementedById("display").innerHTML = `<h3>
         ${post.title}</h3>
     <p>${post.body}</p>
    })

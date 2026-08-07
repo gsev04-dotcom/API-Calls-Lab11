@@ -7,12 +7,12 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
 
 
    .then (post => {
-    document.getElementedById("display").innerHTML = `<h3>
+    document.getElementedById('display').innerHTML = `<h3>
         ${post.title}</h3>
     <p>${post.body}</p>`
    })
     .catch (error =>  {
-        document.getElementById("display").innerHTML = 
+        document.getElementById('display').innerHTML = 
         `<span style=color:red;"> Error: ${error.message}</span>`;
 
         });
@@ -37,15 +37,11 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
                 document.getElementById('display').innerHTML =`<span class="error> Unable to comment to server</span>`;
             };
             xhr.send();
-            }
-        }
+            
+        };
     
 
-
-
-
-
-
-
-});
+    const apiEndpoint = 'https://jsonplaceholder.typicode.com/posts';
+    
+    });
 });

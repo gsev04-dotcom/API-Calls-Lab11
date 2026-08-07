@@ -70,4 +70,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
         )
 
     });
+ const is = document.getElementById( 'postId').value;
+ const url = `https://jsonplaceholder.typicode.com/posts/${id}`;
+
     });

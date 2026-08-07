@@ -9,12 +9,12 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
    .then (post => {
     document.getElementedById("display").innerHTML = `<h3>
         ${post.title}</h3>
-    <p>${post.body}</p>
+    <p>${post.body}</p>`
    })
-    .catch (error => ) {
+    .catch (error =>  {
         document.getElementById("display").innerHTML = 
-        <span style=color:red;"> Error: ${error.message}</span>;
+        `<span style=color:red;"> Error: ${error.message}</span>`;
 
-        }
+        });
 
 });

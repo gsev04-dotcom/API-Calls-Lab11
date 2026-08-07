@@ -3,25 +3,38 @@
      <head>
     <meta charset="UTF-8">
     <meta name ="viewport" content="width=device-width, initial scale 1.0">
-    <title>API CAlls Lab 11</title>
+    <title>API Calls Lab 11</title>
     <link rel="stylesheet" href="style.css">
    
    </head>
 
 <body>
+
  <div class="buttons">
+
 <button id="fetchBtn">Fetch Data with fetch()</button>
+
 <button id="xhrBtn">Fetch Data with XHR</button>
+
 </div>
 
  <section id="display"></section>
- <form id="form">
-<h2>Add a post or Update Existing </h2>
+
+ <form id="apiform">
+
+<h2>Add a post or Update Existing</h2>
+
+<label>
+    Post ID:
+    <input type="number" id="postId">
+</label>
+
 
 <label>
     Title:
     <input type="text" name="title" required>
 </label>
+
 
 <label>
     Body:
@@ -29,18 +42,20 @@
 </label>
 
 <div class="form-buttons">
-    <button type="submit" id="postBtn"> Send POST </button>
-    <button type="submit" id="postBtn"> Send PUT </button>
+
+    <button type="submit" id="postBtn">Send POST</button>
+
+    <button type="button" id="putBtn">Send PUT</button>
+
 </div>
 
 
  </form>
 
 
+<script src="scripts.js"></script>
 
 </body>
-
-<script src=""scripts.js></script>
 </html>
 
  

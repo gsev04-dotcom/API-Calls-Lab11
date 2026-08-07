@@ -23,7 +23,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
     .catch(error =>  {
 
         document.getElementById('display').innerHTML = 
-        `<span style=color:red;">Error: ${error.message}</span>`;
+        `<span style="color:red;">Error: ${error.message}</span>`;
 
         });
 
@@ -101,7 +101,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
         .catch(error => {
 
             document.getElementById('display').innerHTML = 
-            `<span style="color:red;>Sorry we could not create your post: ${error.message}</span>`;
+            `<span style="color:red;">Sorry we could not create your post: ${error.message}</span>`;
         });
 
     });
@@ -143,7 +143,7 @@ if (xhr.status === 200) {
 } else {
 
     document.getElementById('display').innerHTML = 
-    `<span style"color:red;">Unable to update the post.
+    `<span style="color:red;">Unable to update the post.
     (${xhr.statusText})</span>`;
 
 }

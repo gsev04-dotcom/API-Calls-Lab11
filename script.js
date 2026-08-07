@@ -60,9 +60,14 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
         <br>Post ID: 4{dat.id}
         <br>Title:${data.title}
         <br>Body:${data.body}`;
-        
-        })
 
+        })
+        .catch(error => {
+            document.getElementById('display').innerHTML = `<span style="color:red;:>Sorry we could not create your post: ${error.message}</span>`;
+        }
+    
+    
+        )
 
     });
-});
+    });

@@ -94,11 +94,12 @@ if (xhr.status === 200) {
     <br>Post Id: $updated.id}
     <br>Title: $updated.title}
     <br>Body: ${updated.body}`
+
+}else{
 }
-};
-
-xhr.onerror = function() {
-
+document.getElementById('display').innerHTML = `<span style"color:red;"> Unable to update the post.
+    (${xhr.statusText})</span>`;
+}
 };
 
 xhr.send(JSON.stringify({ title, body }));

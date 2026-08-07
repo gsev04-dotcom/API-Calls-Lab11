@@ -161,4 +161,6 @@ xhr.send(JSON.stringify({
 
 });
 
-   
+document.getElementById('deleteBtn').addEventListener('click', function(){
+    
+})

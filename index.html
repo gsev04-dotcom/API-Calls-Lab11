@@ -16,14 +16,22 @@
 
  <section id="display"></section>
  <form id="form">
-<h2>Click a button to load </h2>
+<h2>Add a post or Update Existing </h2>
 
+<label>
+    Title:
+    <input type="text" name="title" required>
+</label>
 
+<label>
+    Body:
+    <input type="text" name="body" required>
+</label>
 
-
-
-
-
+<div class="form-buttons">
+    <button type="submit" id="postBtn"> Send POST </button>
+    <button type="submit" id="postBtn"> Send PUT </button>
+</div>
 
 
  </form>

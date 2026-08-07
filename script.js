@@ -179,5 +179,16 @@ document.getElementById('deleteBtn').addEventListener('click', function(){
         }
         return response.json();
     })
+.then(() => {
+    document.getElementById('display').innerHTML = 
+    `<span style="color:green;">Success! Post #${id} has been deleted.</span>`
+})
+.catch(error =>  {
+    document.getElementById('display').innerHTML = 
+    `<span style="color:red;">Could not delete post: ${error.message}</span>`
+
+    
+});
+
 
 });

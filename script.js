@@ -33,6 +33,11 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
 
             };
             
+            xhr.onerror = function () {
+                document.getElementById('display').innerHTML =`<span class="error> Unable to comment to server</span>`;
+            };
+            xhr.send();
+            }
         }
     
 

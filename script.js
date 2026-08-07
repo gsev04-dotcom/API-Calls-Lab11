@@ -17,4 +17,18 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
 
         });
 
+
+    document.getElementById("xhrBtn"). addEventListener ('click', function() {
+        const xhr = new XMLHttpRequest();
+        xhr.open (GET, 'https://jsonplaceholder.typicode.com/posts/2', true);
+         
+    
+
+
+
+
+
+
+
+});
 });

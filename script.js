@@ -1,21 +1,27 @@
 document.getElementById('fetchBtn').addEventListener('click', function() {
+
   fetch('https://jsonplaceholder.typicode.com/posts/1')
+
    .then(response => {
-    if (!response.ok) {throw new Error("Failed to retrieve data.Try Again");
+
+    if (!response.ok) 
+        {throw new Error("Failed to retrieve data.Try Again");
    }
 
-    return response.json()
+    return response.json();
    
 })
 
 
    .then(post => {
+
     document.getElementById('display').innerHTML = 
    `<h3>${post.title}</h3>
     <p>${post.body}</p>`;
    })
 
     .catch(error =>  {
+
         document.getElementById('display').innerHTML = 
         `<span style=color:red;">Error: ${error.message}</span>`;
 
@@ -25,18 +31,23 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
 
 
     document.getElementById("xhrBtn").addEventListener('click', function() {
+
         const xhr = new XMLHttpRequest();
-        xhr.open ('GET', 'https://jsonplaceholder.typicode.com/posts/2', true);
+
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/2', true);
          
         xhr.onload = function() {
+
             if (xhr.status === 200) {
+
                 const post = JSON.parse(xhr.responseText);
                 
                 document.getElementById('display').innerHTML = 
                 `<h3>${post.title}</h3>
                  <p>${post.body}</p>`;
 
-            }else{
+            } else {
+
                 document.getElementById('display').innerHTML = 
                 `<span class="error">Error: ${xhr.statusText}</span>`;
 
@@ -65,6 +76,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
     fetch(apiEndpoint, {
 
         method: 'POST',
+
         headers: {
              'Content-Type': 'application/json'
          },
@@ -72,9 +84,10 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
        body: JSON.stringify({ title, body}),
         
         })
-    })
+
 
         .then(response => response.json())
+
         .then(data => {
 
         document.getElementById('display').innerHTML =
@@ -86,6 +99,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
         })
 
         .catch(error => {
+
             document.getElementById('display').innerHTML = 
             `<span style="color:red;>Sorry we could not create your post: ${error.message}</span>`;
         });
@@ -94,6 +108,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
  
 
  document.getElementById('putBtn').addEventListener('click', function() {
+
     const id = document.getElementById('postId').value;
     const title = document.querySelector('input[name="title"]').value;
     const body = document.querySelector('input[name="body"]').value;
@@ -101,18 +116,22 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
     const xhr = new XMLHttpRequest();
 
     xhr.open('PUT', 
-        `https://jsonplaceholder.typicode.com/posts/${id}`, true);
 
-    xhr.setRequestHeader
-    ('Content-Type', 
-        'application/json;charset=UTF-8');
-    
+        `https://jsonplaceholder.typicode.com/posts/${id}`, 
+        true
     );
 
+
+    xhr.setRequestHeader(
+        'Content-Type', 
+        'application/json;charset=UTF-8'
+    );
     
+       
 xhr.onload = function() {
 
 if (xhr.status === 200) {
+
     const updated = JSON.parse(xhr.responseText);
 
     document.getElementById('display').innerHTML =
@@ -123,17 +142,19 @@ if (xhr.status === 200) {
 
 } else {
 
-    document.getElementById('display').innerHTML = `<span style"color:red;">Unable to update the post.
+    document.getElementById('display').innerHTML = 
+    `<span style"color:red;">Unable to update the post.
     (${xhr.statusText})</span>`;
 
 }
 };
 
 xhr.send(JSON.stringify({ 
-    title, body }));
-});
+    title, body
+
+}));
+
 
 });
- 
 
    

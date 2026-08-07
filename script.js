@@ -39,9 +39,25 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
             xhr.send();
             
         };
-    
+    });
 
     const apiEndpoint = 'https://jsonplaceholder.typicode.com/posts';
-    
+
+    document.getElementById('apiform').addEventListener(SubmitEvent,function(e)
+    {
+    e.preventDefault();
+    const title = document.querySelector('input[name=title]').value;
+    const body = document.querySelector('input[name="body"]').value;
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': application/json' },
+       body: JSON.stringify({ title, body}),
+        }
+        
+        })
+
+
+
+
     });
 });

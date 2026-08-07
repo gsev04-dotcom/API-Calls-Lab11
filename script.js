@@ -1,6 +1,7 @@
 document.getElementById('fetchBtn').addEventListener('click', function() {
 
   fetch('https://jsonplaceholder.typicode.com/posts/1')
+ 
 
    .then(response => {
 
@@ -91,7 +92,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
         .then(data => {
 
         document.getElementById('display').innerHTML =
-        `<span style="color:green;">Your post had been created successfully!</span>
+        `<span style="color:green;">Your post has been created successfully!</span>
         <br>Post ID: ${data.id}
         <br>Title: ${data.title}
         <br>Body: ${data.body}`;
@@ -112,6 +113,9 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
     const id = document.getElementById('postId').value;
     const title = document.querySelector('input[name="title"]').value;
     const body = document.querySelector('input[name="body"]').value;
+
+
+
 
     const xhr = new XMLHttpRequest();
 
@@ -143,7 +147,7 @@ if (xhr.status === 200) {
 } else {
 
     document.getElementById('display').innerHTML = 
-    `<span style="color:red;">Unable to update the post.
+    `<span style="color:red;">Unable to update the post. 
     (${xhr.statusText})</span>`;
 
 }

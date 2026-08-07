@@ -2,7 +2,7 @@
 <html lang="en">
      <head>
     <meta charset="UTF-8">
-    <meta name ="viewport" content="width=device-width, initial scale 1.0">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Calls Lab 11</title>
     <link rel="stylesheet" href="style.css">
    
@@ -18,7 +18,6 @@
 
 </div>
 
- <section id="display"></section>
 
  <form id="apiform">
 
@@ -32,13 +31,13 @@
 
 <label>
     Title:
-    <input type="text" name="title" required>
+    <input type="text" id="title" name="title" required>
 </label>
 
 
 <label>
     Body:
-    <input type="text" name="body" required>
+    <input type="text" id="body" name="body" required>
 </label>
 
 <div class="form-buttons">
@@ -52,8 +51,8 @@
 
  </form>
 
-
-<script src="scripts.js"></script>
+<div id="display"></div>
+<script src="script.js"></script>
 
 </body>
 </html>

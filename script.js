@@ -4,4 +4,17 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
     if (!response.ok) throw new Error ("Failed to retrieve data. Try Again");
     return response.json()
    })
+
+
+   .then (post => {
+    document.getElementedId("display").innerHTML = `<h3>
+        ${post.title}</h3>
+    <p>${post.body}</p>
+   })
+    .catch (error => ) {
+        document.getElementById("display").innerHTML = 
+        <span style=color:red;"> Error: ${error.message}</span>;
+
+        }
+
 });

@@ -7,7 +7,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
 
 
    .then (post => {
-    document.getElementedById('display').innerHTML = `<h3>
+    document.getElementById('display').innerHTML = `<h3>
         ${post.title}</h3>
     <p>${post.body}</p>`
    })
@@ -20,7 +20,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
 
     document.getElementById("xhrBtn"). addEventListener ('click', function() {
         const xhr = new XMLHttpRequest();
-        xhr.open (GET, 'https://jsonplaceholder.typicode.com/posts/2', true);
+        xhr.open ('GET', 'https://jsonplaceholder.typicode.com/posts/2', true);
          
         xhr.onload = function () {
             if (xhr.status === 200) {
@@ -31,33 +31,38 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
             }else{
                 document.getElementById('display').innerHTML = `<span class="error> Error: ${xhr.statusText}</span>`;
 
-            };
+            }
+        };
             
             xhr.onerror = function () {
-                document.getElementById('display').innerHTML =`<span class="error> Unable to comment to server</span>`;
+                document.getElementById('display').innerHTML =`<span class="error> Unable to connect to server</span>`;
             };
             xhr.send();
             
-        };
+    
     });
 
     const apiEndpoint = 'https://jsonplaceholder.typicode.com/posts';
 
-    document.getElementById('apiform').addEventListener(SubmitEvent,function(e)
+    document.getElementById('apiform').addEventListener('submit',function(e)
     {
     e.preventDefault();
     const title = document.querySelector('input[name=title]').value;
     const body = document.querySelector('input[name="body"]').value;
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
-        headers: { 'Content-Type': application/json' },
-       body: JSON.stringify({ title, body}),
-        }
+        headers: { 'Content-Type': 'application/json'
+
         
-        })
+        },
+
+       body: JSON.stringify({ title, body}),
+        
+    
+    })
         .then(data => {
-        document.getElementById('display').innerHTML = `<span style="color:green;"> Your post had been created successfully!<span>
-        <br>Post ID: 4{dat.id}
+        document.getElementById('display').innerHTML = `<span style="color:green;"> Your post had been created successfully!</span>
+        <br>Post ID: ${data.id}
         <br>Title:${data.title}
         <br>Body:${data.body}`;
 
@@ -70,18 +75,18 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
         )
 
     });
- const is = document.getElementById( 'postId').value;
+ const id = document.getElementById( 'postId').value;
  const url = `https://jsonplaceholder.typicode.com/posts/${id}`;
 
 
- document.getElementById ( 'putBTN').addEventListener( 'click', function() {
-    const id = document.getElementbyId ( 'postId').value;
+ document.getElementById ('putBtn').addEventListener('click', function() {
+    const id = document.getElementById ( 'postId').value;
     const title = document.querySelector( 'input[name="title"]').value;
     const body = document.querySelector ('input[name="body"]').value;
 
     const xhr = new XMLHttpRequest();
-    xhr.open( 'PUT', `https://jsonplaceholder.typicode.com/posts/ ${id}`, true);
-    xhr.setRequestHeader('Content-Type', 'application/json:charset=UTF-8');
+    xhr.open( 'PUT', `https://jsonplaceholder.typicode.com/posts/${id}`, true);
+    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     
 
 
@@ -91,14 +96,14 @@ if (xhr.status === 200) {
     const updated =JSON.parse(xhr.responseText);
     document.getElementedById('display').innerHTML =
     `<span style="color:green;"> Post updated sucessfully!</span>
-    <br>Post Id: $updated.id}
-    <br>Title: $updated.title}
+    <br>Post Id: ${updated.id}
+    <br>Title: ${updated.title}
     <br>Body: ${updated.body}`
 
 }else{
-}
-document.getElementById('display').innerHTML = `<span style"color:red;"> Unable to update the post.
+    document.getElementById('display').innerHTML = `<span style"color:red;"> Unable to update the post.
     (${xhr.statusText})</span>`;
+
 }
 };
 
@@ -107,6 +112,6 @@ xhr.send(JSON.stringify({ title, body }));
 
 
 
-
 )
+
     });

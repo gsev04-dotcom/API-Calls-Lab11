@@ -55,8 +55,13 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
         }
         
         })
-
-
+        .then(data => {
+        document.getElementById('display').innerHTML = `<span style="color:green;"> Your post had been created successfully!<span>
+        <br>Post ID: 4{dat.id}
+        <br>Title:${data.title}
+        <br>Body:${data.body}`;
+        
+        })
 
 
     });

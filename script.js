@@ -72,7 +72,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
     e.preventDefault();
 
     const title = document.querySelector('input[name="title"]').value;
-    const body = document.querySelector('input[name="body"]').value;
+    const body = document.querySelector('textarea[name="body"]').value;
 
     fetch(apiEndpoint, {
 
@@ -112,7 +112,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
 
     const id = document.getElementById('postId').value;
     const title = document.querySelector('input[name="title"]').value;
-    const body = document.querySelector('input[name="body"]').value;
+    const body = document.querySelector('textarea[name="body"]').value;
 
 
 
@@ -187,7 +187,7 @@ document.getElementById('deleteBtn').addEventListener('click', function(){
     document.getElementById('display').innerHTML = 
     `<span style="color:red;">Could not delete post: ${error.message}</span>`
 
-    
+
 });
 
 
